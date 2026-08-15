@@ -125,4 +125,24 @@ public class Lib
     {
         Start,Stop,Clear
     }
+
+    public enum BgDisplayMode
+    {
+        FitToScreen,Unscaled,Tiled
+    }
+
+    public enum RepeatEvents
+    {
+        Beat,Floor
+    }
+
+    public enum Target
+    {
+        Any,Action1,Action2,Confirm,Up,Down,Left,Right
+    }
+
+    public enum State
+    {
+        Down,Up
+    }
 }

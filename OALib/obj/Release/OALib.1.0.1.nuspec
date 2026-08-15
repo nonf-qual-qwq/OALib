@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>OALib</id>
-    <version>1.0.0-pre</version>
+    <version>1.0.1</version>
     <authors>OALib</authors>
     <description>Package Description</description>
-    <repository type="git" commit="7cc936b80460d8a4cf46415edbc4d18d13f3831e" />
+    <repository type="git" commit="001242c4893979641be01df314287c859f0a21bf" />
     <dependencies>
       <group targetFramework="net9.0">
         <dependency id="Newtonsoft.Json" version="13.0.5-beta1" exclude="Build,Analyzers" />
