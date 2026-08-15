@@ -12,7 +12,6 @@ public class AdofaiFile
     public JArray AngleData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
     //设置
     public JObject Settings = new JObject();
-
     //事件
     public JArray Actions = [];
     //装饰
@@ -51,6 +50,11 @@ public class AdofaiFile
         Actions.Add(action);
     }
 
+    public void AngleAdd(JValue angle)
+    {
+        AngleData.Add(angle);
+    }
+
     public void Save()
     {
         JObject fileObject = new JObject
@@ -62,12 +66,10 @@ public class AdofaiFile
         };
         string json = fileObject.ToString(Newtonsoft.Json.Formatting.Indented);
 
-        // 3. 确保目标目录存在
         string directory = Path.GetDirectoryName(FilePath);
         if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
             Directory.CreateDirectory(directory);
 
-        // 4. 写入文件（覆盖或新建）
         File.WriteAllText(FilePath, json);
 
     }

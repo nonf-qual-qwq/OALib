@@ -39,7 +39,7 @@ public class AddObject : JObject
     // 星球轨迹颜色
     public string PlanetTailColor = "ff0000";
     
-    // 规则类型
+    // 轨道类型
     public Lib.TrackType TrackType =  Lib.TrackType.Normal;
     
     // 轨道角度

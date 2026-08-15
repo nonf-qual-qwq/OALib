@@ -36,7 +36,7 @@ public class MoveDecorations : JObject
     public string? DecorationImage;
     
     // 位置
-    public float?[] Position = new float?[2] { null, null };
+    public float?[] PositionOffset = new float?[2] { null, null };
     
     // 轴心偏移
     public float?[] PivotOffset = new float?[2] { null, null };
@@ -105,9 +105,9 @@ public class MoveDecorations : JObject
             jObject["decorationImage"] = DecorationImage;
         }
 
-        if (Position[0] != null || Position[1] != null)
+        if (PositionOffset[0] != null || PositionOffset[1] != null)
         {
-            jObject["position"] = JArray.FromObject(Position);
+            jObject["positionOffset"] = JArray.FromObject(PositionOffset);
         }
 
         if (PivotOffset[0] != null || PivotOffset[1] != null)

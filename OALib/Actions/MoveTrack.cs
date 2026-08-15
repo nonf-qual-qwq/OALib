@@ -78,7 +78,7 @@ public class MoveTrack : JObject
 
         if (RotationOffset != null)
         {
-            jObject["rotationOffset"] = JArray.FromObject(RotationOffset);
+            jObject["rotationOffset"] = RotationOffset;
         }
 
         if (Scale[0] != null || Scale[1] != null)
@@ -88,7 +88,7 @@ public class MoveTrack : JObject
 
         if (Opacity != null)
         {
-            jObject["opacity"] = JArray.FromObject(Opacity);
+            jObject["opacity"] = Opacity;
         }
 
         return jObject;
