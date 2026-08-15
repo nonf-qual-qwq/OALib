@@ -120,4 +120,9 @@ public class Lib
     {
         ThisTile,Start,End
     }
+
+    public enum TargetMode
+    {
+        Start,Stop,Clear
+    }
 }

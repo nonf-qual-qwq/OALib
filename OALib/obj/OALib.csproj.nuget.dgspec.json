@@ -5,7 +5,7 @@
   },
   "projects": {
     "C:\\Users\\Administrator\\RiderProjects\\OALib\\OALib\\OALib.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.0-pre",
       "restore": {
         "projectUniqueName": "C:\\Users\\Administrator\\RiderProjects\\OALib\\OALib\\OALib.csproj",
         "projectName": "OALib",

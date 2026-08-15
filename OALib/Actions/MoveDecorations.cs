@@ -15,7 +15,7 @@ public class MoveDecorations : JObject
     public float Duration = 1;
     
     // 标签
-    public string Tag = "sampleTag";
+    public string Tag = "";
     
     // 角度偏移
     public float AngleOffset = 0;

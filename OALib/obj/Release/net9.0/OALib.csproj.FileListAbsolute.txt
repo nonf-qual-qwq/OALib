@@ -1,0 +1,13 @@
+C:\Users\Administrator\RiderProjects\OALib\OALib\bin\Release\net9.0\OALib.deps.json
+C:\Users\Administrator\RiderProjects\OALib\OALib\bin\Release\net9.0\OALib.dll
+C:\Users\Administrator\RiderProjects\OALib\OALib\bin\Release\net9.0\OALib.pdb
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.csproj.AssemblyReference.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.sourcelink.json
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.dll
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\refint\OALib.dll
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\OALib.pdb
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net9.0\ref\OALib.dll
