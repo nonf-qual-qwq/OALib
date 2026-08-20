@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>OALib</id>
+    <version>1.0.3</version>
+    <authors>OALib</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="99dde59f64853fd462c640ecbd403875c92c1d9b" />
+    <dependencies>
+      <group targetFramework="net9.0">
+        <dependency id="Newtonsoft.Json" version="13.0.5-beta1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Administrator\RiderProjects\OALib\OALib\bin\Release\net9.0\OALib.dll" target="lib\net9.0\OALib.dll" />
+  </files>
+</package>
