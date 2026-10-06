@@ -1,76 +1,85 @@
-﻿namespace OALib.AdofaiArc;
+﻿using System.IO;
 
-using Newtonsoft.Json.Linq;
-
-public class AdofaiFile
+namespace OALib.AdofaiArc
 {
-    // ADOFAI文件目录
-    public string FilePath = "";
-    // ADOFAI文件
-    public string FileData = "";
-    // 角度
-    public JArray AngleData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    //设置
-    public JObject Settings = new JObject();
-    //事件
-    public JArray Actions = [];
-    //装饰
-    public JArray Decorations = [];
     
-    public void Load()
-    {
-        FileData = File.ReadAllText(FilePath);
-        JObject jsonObject = JObject.Parse(FileData);
-        AngleData = jsonObject["angleData"].ToObject<JArray>();
-        Settings = jsonObject["settings"].ToObject<JObject>();
-        Actions = jsonObject["actions"].ToObject<JArray>();
-        Decorations = jsonObject["decorations"].ToObject<JArray>();
+    using Newtonsoft.Json.Linq;
 
-    }
-
-    public void New()
+    public class AdofaiFile
     {
-        FilePath = "..\\..\\..\\AdofaiArc\\Initialize.json";
-        Load();
-    }
+        // ADOFAI文件目录
+        public string FilePath = "";
 
-    public void Clone(AdofaiFile file)
-    {
-        FilePath = file.FilePath;
-        Load();
-    }
+        // ADOFAI文件
+        public string FileData = "";
 
-    public void DecoAdd(JObject deco)
-    {
-        Decorations.Add(deco);
-    }
+        // 角度
+        public JArray AngleData = new JArray();
 
-    public void ActionAdd(JObject action)
-    {
-        Actions.Add(action);
-    }
+        //设置
+        public JObject Settings = new JObject();
 
-    public void AngleAdd(JValue angle)
-    {
-        AngleData.Add(angle);
-    }
+        //事件
+        public JArray Actions = new JArray();
 
-    public void Save()
-    {
-        JObject fileObject = new JObject
+        //装饰
+        public JArray Decorations = new JArray();
+
+        public void Load()
         {
-            ["angleData"] = AngleData,
-            ["settings"] = Settings,
-            ["actions"] = Actions,
-            ["decorations"] = Decorations
-        };
-        string json = fileObject.ToString(Newtonsoft.Json.Formatting.Indented);
+            FileData = File.ReadAllText(FilePath);
+            JObject jsonObject = JObject.Parse(FileData);
+            AngleData = jsonObject["angleData"].ToObject<JArray>();
+            Settings = jsonObject["settings"].ToObject<JObject>();
+            Actions = jsonObject["actions"].ToObject<JArray>();
+            Decorations = jsonObject["decorations"].ToObject<JArray>();
 
-        string directory = Path.GetDirectoryName(FilePath);
-        if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
-            Directory.CreateDirectory(directory);
+        }
 
-        File.WriteAllText(FilePath, json);
+        public void New()
+        {
+            FilePath = "..\\..\\..\\AdofaiArc\\Initialize.json";
+            Load();
+        }
 
+        public void Clone(AdofaiFile file)
+        {
+            FilePath = file.FilePath;
+            Load();
+        }
+
+        public void DecoAdd(JObject deco)
+        {
+            Decorations.Add(deco);
+        }
+
+        public void ActionAdd(JObject action)
+        {
+            Actions.Add(action);
+        }
+
+        public void AngleAdd(JValue angle)
+        {
+            AngleData.Add(angle);
+        }
+
+        public void Save()
+        {
+            JObject fileObject = new JObject
+            {
+                ["angleData"] = AngleData,
+                ["settings"] = Settings,
+                ["actions"] = Actions,
+                ["decorations"] = Decorations
+            };
+            string json = fileObject.ToString(Newtonsoft.Json.Formatting.Indented);
+
+            string directory = Path.GetDirectoryName(FilePath);
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+
+            File.WriteAllText(FilePath, json);
+
+        }
     }
 }

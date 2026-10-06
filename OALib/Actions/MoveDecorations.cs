@@ -147,6 +147,16 @@ public class MoveDecorations : JObject
 
         if (ParallaxOffset[0] != null || ParallaxOffset[1] != null)
         {
+            if (ParallaxOffset[0] == null)
+            {
+                ParallaxOffset[0] = 0;
+            }
+
+            if (ParallaxOffset[1] == null)
+            {
+                ParallaxOffset[1] = 0;
+            }
+
             jObject["parallaxOffset"] = JArray.FromObject(ParallaxOffset);
         }
 

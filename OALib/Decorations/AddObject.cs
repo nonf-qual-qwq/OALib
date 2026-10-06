@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace OALib.Decorations;
-
+namespace OALib.Decorations
+{
+    
 using Lib;
 
 public class AddObject : JObject
@@ -171,4 +172,5 @@ public class AddObject : JObject
         return jObject;
     }
 
+}
 }

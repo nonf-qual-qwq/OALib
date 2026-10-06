@@ -1,6 +1,6 @@
-﻿namespace OALib.Lib;
-
-public class Lib
+﻿namespace OALib.Lib
+{
+    public class Lib
 {
 
     public enum EventType
@@ -121,7 +121,9 @@ public class Lib
         BluePlanet,
         Player,
         LastPosition,
-        LastPositionNoRotation
+        LastPositionNoRotation,
+        Camera,
+        CameraAspect
     }
 
     public enum Ease
@@ -345,3 +347,6 @@ public class Lib
     }
 
 }
+
+}
+

@@ -38,6 +38,7 @@ public class PlaySound : JObject
         JObject jObject = new JObject()
         {
               ["floor"] = Floor,
+              ["eventType"] = EventType.ToString(),
               ["hitsound"] = Hitsound.ToString(),
               ["offset"] = Offset,
               ["playDuration"] = PlayDuration,
