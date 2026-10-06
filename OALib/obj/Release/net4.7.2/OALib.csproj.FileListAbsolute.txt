@@ -1,0 +1,6 @@
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.csproj.AssemblyReference.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.AssemblyInfoInputs.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.AssemblyInfo.cs
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\RiderProjects\OALib\OALib\obj\Release\net4.7.2\OALib.sourcelink.json

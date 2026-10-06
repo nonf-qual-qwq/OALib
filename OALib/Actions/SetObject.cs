@@ -10,7 +10,7 @@ public class SetObject : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetParticle;
+    public Lib.EventType EventType = Lib.EventType.SetObject;
     
     // 时长
     public float Duration = 1;
