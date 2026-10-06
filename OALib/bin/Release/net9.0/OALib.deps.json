@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "OALib/1.0.8": {
+      "OALib/1.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.5-beta1"
         },
@@ -25,7 +25,7 @@
     }
   },
   "libraries": {
-    "OALib/1.0.8": {
+    "OALib/1.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

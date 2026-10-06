@@ -2,26 +2,26 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 public class RecolorTrack : JObject
 {
     // 方块数量
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.RecolorTrack;
+    public Enum.EventType EventType = Enum.EventType.RecolorTrack;
     
     // 效果起始方块数
     public int StartTileNumber = 0;
     
     // 效果起始方块对应
-    public Lib.EffectTileType StartTileType = Lib.EffectTileType.ThisTile;
+    public Enum.EffectTileType StartTileType = Enum.EffectTileType.ThisTile;
     
     // 效果结束方块数
     public int EndTileNumber = 0;
     
     // 效果结束方块对应
-    public Lib.EffectTileType EndTileType = Lib.EffectTileType.ThisTile;
+    public Enum.EffectTileType EndTileType = Enum.EffectTileType.ThisTile;
     
     // 间隙长度
     public int GapLength = 0;
@@ -33,13 +33,13 @@ public class RecolorTrack : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";
     
     // 轨道颜色类型
-    public Lib.TrackColorType? TrackColorType = Lib.TrackColorType.Single;
+    public Enum.TrackColorType? TrackColorType = Enum.TrackColorType.Single;
     
     // 轨道主色调
     public string? TrackColor;
@@ -57,7 +57,7 @@ public class RecolorTrack : JObject
     public int? TrackPulseLength;
     
     // 轨道风格
-    public Lib.TrackStyle? TrackStyle;
+    public Enum.TrackStyle? TrackStyle;
     
     // 轨道图片
     public string? TrackTexture;

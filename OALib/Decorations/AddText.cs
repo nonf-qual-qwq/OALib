@@ -2,7 +2,7 @@
 
 namespace OALib.Decorations
 {
-    using Lib;
+    using Enum;
 
     public class AddText : JObject
     {
@@ -10,7 +10,7 @@ namespace OALib.Decorations
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.AddText;
+        public Enum.EventType EventType = Enum.EventType.AddText;
     
         // 文本
         public string DecText = "";
@@ -19,13 +19,13 @@ namespace OALib.Decorations
         public string Tag = "";
     
         // 字体
-        public Lib.Font Font = Lib.Font.Default;
+        public Enum.Font Font = Enum.Font.Default;
     
         // 位置
         public float[] Position = [0, 0 ];  
     
         // 相对于
-        public Lib.RelativeTo RelativeTo = Lib.RelativeTo.Tile;
+        public Enum.RelativeTo RelativeTo = Enum.RelativeTo.Tile;
     
         // 轴心偏移
         public float[] PivotOffset = { 0, 0 };

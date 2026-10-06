@@ -2,7 +2,7 @@
 
 namespace OALib.Actions
 {
-    using Lib;
+    using Enum;
 
     public class PositionTrack : JObject
     { 
@@ -10,13 +10,13 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.PositionTrack;
+        public Enum.EventType EventType = Enum.EventType.PositionTrack;
     
         // 关联方块数
         public int RelativeToTileNumber = 0;
     
         // 关联方块对应
-        public Lib.EffectTileType RelativeToTileType = Lib.EffectTileType.ThisTile;
+        public Enum.EffectTileType RelativeToTileType = Enum.EffectTileType.ThisTile;
     
         // 仅改变此方块
         public bool JustThisTile = false;

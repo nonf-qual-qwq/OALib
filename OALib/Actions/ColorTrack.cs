@@ -3,7 +3,7 @@
 namespace OALib.Actions
 {
 
-    using Lib;
+    using Enum;
 
     public class ColorTrack : JObject
     {
@@ -11,7 +11,7 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.ColorTrack;
+        public Enum.EventType EventType = Enum.EventType.ColorTrack;
 
         // 轨道副色调
         public string SecondaryTrackColor = "ffffff";
@@ -29,13 +29,13 @@ namespace OALib.Actions
         public bool JustThisTile = false;
 
         // 轨道颜色类型
-        public Lib.TrackColorType? TrackColorType;
+        public Enum.TrackColorType? TrackColorType;
 
         // 轨道颜色
         public string? TrackColor;
 
         // 轨道风格
-        public Lib.TrackStyle? TrackStyle;
+        public Enum.TrackStyle? TrackStyle;
 
         // 轨道图片
         public string? TrackTexture;

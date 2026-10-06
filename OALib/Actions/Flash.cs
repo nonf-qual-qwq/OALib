@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class Flash : JObject
 {
@@ -10,13 +10,13 @@ public class Flash : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.MoveDecorations;
+    public Enum.EventType EventType = Enum.EventType.MoveDecorations;
     
     // 时长
     public float Duration = 1;
     
     // 平面
-    public Lib.Plane Plane = Lib.Plane.Background;
+    public Enum.Plane Plane = Enum.Plane.Background;
     
     // 起始颜色
     public string StartColor = "ffffff";
@@ -34,7 +34,7 @@ public class Flash : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";

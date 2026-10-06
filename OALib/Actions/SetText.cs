@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class SetText : JObject
 {
@@ -10,7 +10,7 @@ public class SetText : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetText;
+    public Enum.EventType EventType = Enum.EventType.SetText;
     
     // 文本
     public string DecText = "";

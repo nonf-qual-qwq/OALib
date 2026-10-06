@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class FreeRoamTwirl : JObject
 {
@@ -10,7 +10,7 @@ public class FreeRoamTwirl : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.FreeRoamTwirl;
+    public Enum.EventType EventType = Enum.EventType.FreeRoamTwirl;
     
     // 位置偏移
     public float[] Position = [1, 0];

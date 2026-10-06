@@ -2,20 +2,20 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 public class ScalePlanets : JObject
 {
     // 方块数量
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetPlanetRotation;
+    public Enum.EventType EventType = Enum.EventType.SetPlanetRotation;
     
     // 时长
     public float Duration = 1;
     
     // 目标星球
-    public Lib.TargetPlanet TargetPlanet = Lib.TargetPlanet.FirePlanet;
+    public Enum.TargetPlanet TargetPlanet = Enum.TargetPlanet.FirePlanet;
     
     // 大小
     public float Scale = 100;
@@ -24,7 +24,7 @@ public class ScalePlanets : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";

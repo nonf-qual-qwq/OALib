@@ -2,14 +2,14 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 public class Pause : JObject
 {
     // 方块数量
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.Pause;
+    public Enum.EventType EventType = Enum.EventType.Pause;
     
     // 时长
     public float Duration = 1;
@@ -18,7 +18,7 @@ public class Pause : JObject
     public int CountdownTicks = 0;
     
     // 角度校准
-    public Lib.AngleCorrectionDir AngleCorrectionDir = Lib.AngleCorrectionDir.Backward;
+    public Enum.AngleCorrectionDir AngleCorrectionDir = Enum.AngleCorrectionDir.Backward;
 
     public JObject Create()
     {

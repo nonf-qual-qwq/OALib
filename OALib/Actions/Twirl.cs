@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class Twirl : JObject
 {
@@ -10,7 +10,7 @@ public class Twirl : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.Twirl;
+    public Enum.EventType EventType = Enum.EventType.Twirl;
 
     public JObject Create()
     {

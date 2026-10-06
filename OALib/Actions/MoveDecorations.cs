@@ -1,6 +1,6 @@
 ﻿namespace OALib.Actions;
 
-using Lib;
+using Enum;
 using Newtonsoft.Json.Linq;
 
 public class MoveDecorations : JObject
@@ -9,7 +9,7 @@ public class MoveDecorations : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.MoveDecorations;
+    public Enum.EventType EventType = Enum.EventType.MoveDecorations;
     
     // 时长
     public float Duration = 1;
@@ -21,7 +21,7 @@ public class MoveDecorations : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";
@@ -30,7 +30,7 @@ public class MoveDecorations : JObject
     public bool? Visible;
     
     // 相对于
-    public Lib.RelativeTo? RelativeTo;
+    public Enum.RelativeTo? RelativeTo;
     
     // 图片
     public string? DecorationImage;
@@ -66,7 +66,7 @@ public class MoveDecorations : JObject
     public bool? ImageSmoothing;
 
     // 遮罩类型
-    public Lib.MaskingType? MaskingType;
+    public Enum.MaskingType? MaskingType;
     
     // 使用遮罩深度
     public bool? UseMaskingDepth;

@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class SetInputEvent : JObject
 {
@@ -10,13 +10,13 @@ public class SetInputEvent : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetInputEvent;
+    public Enum.EventType EventType = Enum.EventType.SetInputEvent;
     
     // 侦测目标
-    public Lib.Target Target = Lib.Target.Any;
+    public Enum.Target Target = Enum.Target.Any;
     
     // 侦测状态
-    public Lib.State State = Lib.State.Down;
+    public Enum.State State = Enum.State.Down;
     
     // 事件运行标签
     public bool IgnoreInput = false;

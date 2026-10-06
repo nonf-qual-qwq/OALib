@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class Hide : JObject
 {
@@ -10,7 +10,7 @@ public class Hide : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.Hide;
+    public Enum.EventType EventType = Enum.EventType.Hide;
     
     // 隐藏判定
     public bool HideJudgment = false;

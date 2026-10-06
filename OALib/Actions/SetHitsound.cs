@@ -1,6 +1,6 @@
 ﻿namespace OALib.Actions;
 
-using Lib;
+using Enum;
 using Newtonsoft.Json.Linq;
 public class SetHitsound : JObject
 {
@@ -8,13 +8,13 @@ public class SetHitsound : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetHitsound;
+    public Enum.EventType EventType = Enum.EventType.SetHitsound;
     
     // 设定目标
-    public Lib.GameSound GameSound = Lib.GameSound.Hitsound;
+    public Enum.GameSound GameSound = Enum.GameSound.Hitsound;
     
     // 打拍声
-    public Lib.Hitsound Hitsound = Lib.Hitsound.Kick;
+    public Enum.Hitsound Hitsound = Enum.Hitsound.Kick;
     
     // 音量
     public int HitsoundVolume = 100;

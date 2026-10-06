@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 public class PlaySound : JObject
 {
     
@@ -10,10 +10,10 @@ public class PlaySound : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.PlaySound;
+    public Enum.EventType EventType = Enum.EventType.PlaySound;
     
     // 打拍声
-    public Object Hitsound = Lib.Hitsound.Kick;
+    public Object Hitsound = Enum.Hitsound.Kick;
     
     // 音乐偏移
     public int Offset = 0;

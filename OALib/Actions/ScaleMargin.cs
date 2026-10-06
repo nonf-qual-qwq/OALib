@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class ScaleMargin : JObject
 {
@@ -10,7 +10,7 @@ public class ScaleMargin : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.ScaleMargin;
+    public Enum.EventType EventType = Enum.EventType.ScaleMargin;
     
     // 判定大小
     public float Scale = 100;

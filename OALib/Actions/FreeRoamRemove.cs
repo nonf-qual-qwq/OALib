@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class FreeRoamRemove : JObject
 {
@@ -11,7 +11,7 @@ public class FreeRoamRemove : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.FreeRoamRemove;
+    public Enum.EventType EventType = Enum.EventType.FreeRoamRemove;
     
     // 位置偏移
     public float[] Position = [1, 0];

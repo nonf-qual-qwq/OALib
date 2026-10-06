@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class MoveCamera : JObject
 {
@@ -10,7 +10,7 @@ public class MoveCamera : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.MoveCamera;
+    public Enum.EventType EventType = Enum.EventType.MoveCamera;
     
     // 时长
     public float Duration = 1;
@@ -19,13 +19,13 @@ public class MoveCamera : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";
     
     // 关联于
-    public Lib.RelativeTo? RelativeTo = Lib.RelativeTo.Player;
+    public Enum.RelativeTo? RelativeTo = Enum.RelativeTo.Player;
     
     // 位置
     public float?[] PositionOffset = new float?[2] { null, null };

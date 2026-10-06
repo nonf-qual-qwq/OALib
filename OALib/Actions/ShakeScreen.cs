@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class ShakeScreen : JObject
 {
@@ -10,7 +10,7 @@ public class ShakeScreen : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.ShakeScreen;
+    public Enum.EventType EventType = Enum.EventType.ShakeScreen;
     
     // 时长
     public float Duration = 1;
@@ -25,7 +25,7 @@ public class ShakeScreen : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 淡出
     public bool FadeOut = true;

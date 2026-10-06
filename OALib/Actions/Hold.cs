@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class Hold : JObject
 {
@@ -10,7 +10,7 @@ public class Hold : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.Hold;
+    public Enum.EventType EventType = Enum.EventType.Hold;
     
     // 时长
     public float Duration = 0;

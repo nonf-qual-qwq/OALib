@@ -1,6 +1,6 @@
-﻿namespace OALib.Lib
+﻿namespace OALib.Enum
 {
-    public class Lib
+    public class Enum
 {
 
     public enum EventType

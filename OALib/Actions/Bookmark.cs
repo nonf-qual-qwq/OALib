@@ -2,7 +2,7 @@
 
 namespace OALib.Actions
 {
-    using Lib;
+    using Enum;
 
     public class Bookmark : JObject
     {
@@ -10,7 +10,7 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.Bookmark;
+        public Enum.EventType EventType = Enum.EventType.Bookmark;
 
         public JObject Create()
         {

@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class CustomBackground : JObject
 {
@@ -10,7 +10,7 @@ public class CustomBackground : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.CustomBackground;
+    public Enum.EventType EventType = Enum.EventType.CustomBackground;
     
     // 颜色
     public string Color = "000000";
@@ -25,7 +25,7 @@ public class CustomBackground : JObject
     public float?[] Parallax =  { 100, 100 };
     
     // 背景显示模式
-    public Lib.BgDisplayMode BgDisplayMode = Lib.BgDisplayMode.FitToScreen;
+    public Enum.BgDisplayMode BgDisplayMode = Enum.BgDisplayMode.FitToScreen;
     
     // 图片平滑
     public bool ImageSmoothing = true;

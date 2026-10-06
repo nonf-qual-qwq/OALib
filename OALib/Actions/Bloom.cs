@@ -3,7 +3,7 @@
 namespace OALib.Actions
 {
 
-    using Lib;
+    using Enum;
 
     public class Bloom : JObject
     {
@@ -11,7 +11,7 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.Bloom;
+        public Enum.EventType EventType = Enum.EventType.Bloom;
 
         // 启用
         public bool Enabled = true;
@@ -32,7 +32,7 @@ namespace OALib.Actions
         public float AngleOffset = 0;
 
         // 缓速
-        public Lib.Ease Ease = Lib.Ease.Linear;
+        public Enum.Ease Ease = Enum.Ease.Linear;
 
         // 事件标签
         public string EventTag = "";

@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class FreeRoam : JObject
 {
@@ -10,7 +10,7 @@ public class FreeRoam : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.FreeRoam;
+    public Enum.EventType EventType = Enum.EventType.FreeRoam;
     
     // 时长
     public float Duration = 16;
@@ -25,16 +25,16 @@ public class FreeRoam : JObject
     public float OutTime = 4;
     
     // 缓速
-    public Lib.Ease OutEase = Lib.Ease.InOutSine;
+    public Enum.Ease OutEase = Enum.Ease.InOutSine;
     
     // 在离开区域移动摄像头
     public bool OutCam = true;
     
     // 强音打拍音效
-    public Lib.Hitsound HitsoundOnBeats = Lib.Hitsound.None;
+    public Enum.Hitsound HitsoundOnBeats = Enum.Hitsound.None;
     
     // 弱音打拍音效
-    public Lib.Hitsound HitsoundOffBeats = Lib.Hitsound.None;
+    public Enum.Hitsound HitsoundOffBeats = Enum.Hitsound.None;
 
     
 

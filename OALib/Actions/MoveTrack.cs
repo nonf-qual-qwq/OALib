@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class MoveTrack : JObject
 {
@@ -10,19 +10,19 @@ public class MoveTrack : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.MoveTrack;
+    public Enum.EventType EventType = Enum.EventType.MoveTrack;
     
     // 效果起始方块数
     public int StartTileNumber = 0;
     
     // 效果起始方块对应
-    public Lib.EffectTileType StartTileType = Lib.EffectTileType.ThisTile;
+    public Enum.EffectTileType StartTileType = Enum.EffectTileType.ThisTile;
     
     // 效果结束方块数
     public int EndTileNumber = 0;
     
     // 效果结束方块对应
-    public Lib.EffectTileType EndTileType = Lib.EffectTileType.ThisTile;
+    public Enum.EffectTileType EndTileType = Enum.EffectTileType.ThisTile;
     
     // 间隙长度
     public int GapLength = 0;
@@ -34,7 +34,7 @@ public class MoveTrack : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 仅限最大特效
     public bool MaxVfxOnly = false;

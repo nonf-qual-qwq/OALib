@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class SetConditionalEvents : JObject
 {
@@ -10,7 +10,7 @@ public class SetConditionalEvents : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetConditionalEvents;
+    public Enum.EventType EventType = Enum.EventType.SetConditionalEvents;
     
     // 完美标签
     public string PerfectTag = "";

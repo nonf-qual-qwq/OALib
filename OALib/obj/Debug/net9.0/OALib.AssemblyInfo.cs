@@ -12,11 +12,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("OALib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.8.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.8+dd217086ca39cae70be0fd83ef87ee9be8c5a565")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.1+506b1fafd45df82504ba5375e7709eba710b2cfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("OALib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OALib")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.8.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.1.1.0")]
 
 // 由 MSBuild WriteCodeFragment 类生成。
 

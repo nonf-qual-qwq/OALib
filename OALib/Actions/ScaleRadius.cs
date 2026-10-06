@@ -2,14 +2,14 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 public class ScaleRadius : JObject
 {
     // 方块数量
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.ScaleRadius;
+    public Enum.EventType EventType = Enum.EventType.ScaleRadius;
     
     // 大小
     public float Scale = 100;

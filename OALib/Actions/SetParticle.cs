@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class SetParticle : JObject
 {
@@ -10,7 +10,7 @@ public class SetParticle : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetParticle;
+    public Enum.EventType EventType = Enum.EventType.SetParticle;
     
     // 时长
     public float Duration = 1;
@@ -22,13 +22,13 @@ public class SetParticle : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";
     
     // 模式
-    public Lib.TargetMode? TargetMode;
+    public Enum.TargetMode? TargetMode;
     
     // 粒子持续事件
     public float?[] ParticleLifetime = new float?[2] { null, null };

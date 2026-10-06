@@ -2,7 +2,7 @@
 
 namespace OALib.Decorations
 {
-    using Lib;
+    using Enum;
 
     public class AddDecoration : JObject
     {
@@ -10,7 +10,7 @@ namespace OALib.Decorations
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.AddObject;
+        public Enum.EventType EventType = Enum.EventType.AddObject;
     
         // 图片
         public string DecorationImage = "";
@@ -22,7 +22,7 @@ namespace OALib.Decorations
         public float[] Position = { 0, 0 };  
     
         // 相对于
-        public Lib.RelativeTo RelativeTo = Lib.RelativeTo.Tile;
+        public Enum.RelativeTo RelativeTo = Enum.RelativeTo.Tile;
     
         // 依附地板
         public bool StickToFloor =  false;
@@ -67,10 +67,10 @@ namespace OALib.Decorations
         public bool ImageSmoothing = true;
     
         // 混合模式
-        public Lib.BlendMode BlendMode = Lib.BlendMode.None;
+        public Enum.BlendMode BlendMode = Enum.BlendMode.None;
     
         // 遮罩类型
-        public Lib.MaskingType MaskingType =  Lib.MaskingType.None;
+        public Enum.MaskingType MaskingType =  Enum.MaskingType.None;
     
         // 遮罩目标
         public string MaskingTarget = "";
@@ -85,10 +85,10 @@ namespace OALib.Decorations
         public int MaskingBackDepth = -1;
 
         // 判定框
-        public Lib.Hitbox Hitbox = Lib.Hitbox.None;
+        public Enum.Hitbox Hitbox = Enum.Hitbox.None;
     
         // 判定框触发类型
-        public Lib.HitboxTriggerType HitboxTriggerType = Lib.HitboxTriggerType.Once;
+        public Enum.HitboxTriggerType HitboxTriggerType = Enum.HitboxTriggerType.Once;
     
         // 判定框触发重复间隔
         public float HitboxRepeatInterval = 10000;

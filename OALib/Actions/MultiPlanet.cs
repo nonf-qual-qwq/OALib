@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class MultiPlanet : JObject
 {
@@ -10,10 +10,10 @@ public class MultiPlanet : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.MultiPlanet;
+    public Enum.EventType EventType = Enum.EventType.MultiPlanet;
     
     // 多行星
-    public Lib.Planets Planets = Lib.Planets.TwoPlanets;
+    public Enum.Planets Planets = Enum.Planets.TwoPlanets;
 
     public JObject Create()
     {

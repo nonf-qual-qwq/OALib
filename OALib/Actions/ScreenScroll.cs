@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class ScreenScroll : JObject
 {
@@ -10,7 +10,7 @@ public class ScreenScroll : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetFrameRate;
+    public Enum.EventType EventType = Enum.EventType.SetFrameRate;
     
     // 卷屏速度
     public float[] Scroll = { 0, 0 };

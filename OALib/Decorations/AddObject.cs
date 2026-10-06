@@ -3,7 +3,7 @@
 namespace OALib.Decorations
 {
     
-using Lib;
+using Enum;
 
 public class AddObject : JObject
 {
@@ -11,10 +11,10 @@ public class AddObject : JObject
     public int Floor = 0;
 
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.AddObject;
+    public Enum.EventType EventType = Enum.EventType.AddObject;
     
     // 对象类型
-    public Lib.ObjectType ObjectType = Lib.ObjectType.Floor;
+    public Enum.ObjectType ObjectType = Enum.ObjectType.Floor;
 
     // 复活泡泡出现起始偏移
     public int BubbleAppearStartOffset = 8;
@@ -32,7 +32,7 @@ public class AddObject : JObject
     public string Tag = "";
     
     // 星球颜色类型
-    public Lib.PlanetColorType PlanetColorType = Lib.PlanetColorType.DefaultRed;
+    public Enum.PlanetColorType PlanetColorType = Enum.PlanetColorType.DefaultRed;
 
     // 星球颜色
     public string PlanetColor = "ff0000";
@@ -41,13 +41,13 @@ public class AddObject : JObject
     public string PlanetTailColor = "ff0000";
     
     // 轨道类型
-    public Lib.TrackType TrackType =  Lib.TrackType.Normal;
+    public Enum.TrackType TrackType =  Enum.TrackType.Normal;
     
     // 轨道角度
     public float TrackAngle = 180;
 
     // 轨道颜色类型
-    public Lib.TrackColorType TrackColorType = Lib.TrackColorType.Single;
+    public Enum.TrackColorType TrackColorType = Enum.TrackColorType.Single;
     
     // 轨道主色调
     public string TrackColor = "debb7bff";
@@ -62,10 +62,10 @@ public class AddObject : JObject
     public float TrackOpacity = 100;
     
     // 轨道风格
-    public Lib.TrackStyle TrackStyle = Lib.TrackStyle.Standard;
+    public Enum.TrackStyle TrackStyle = Enum.TrackStyle.Standard;
 
     // 轨道图标
-    public Lib.TrackIcon TrackIcon = Lib.TrackIcon.None;
+    public Enum.TrackIcon TrackIcon = Enum.TrackIcon.None;
 
     // 轨道图标角度
     public float TrackIconAngle = 0;
@@ -95,7 +95,7 @@ public class AddObject : JObject
     public float[] Position = { 0, 0 };  
     
     // 相对于
-    public Lib.RelativeTo RelativeTo = Lib.RelativeTo.Tile;
+    public Enum.RelativeTo RelativeTo = Enum.RelativeTo.Tile;
     
     // 轴心偏移
     public float[] PivotOffset = { 0, 0 };

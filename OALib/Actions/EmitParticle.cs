@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class EmitParticle : JObject
 {
@@ -10,7 +10,7 @@ public class EmitParticle : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.EmitParticle;
+    public Enum.EventType EventType = Enum.EventType.EmitParticle;
     
     // 标签
     public string Tag = "";

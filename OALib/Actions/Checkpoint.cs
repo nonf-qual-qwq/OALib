@@ -3,7 +3,7 @@
 namespace OALib.Actions
 {
 
-    using Lib;
+    using Enum;
 
     public class Checkpoint : JObject
     {
@@ -11,7 +11,7 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.Checkpoint;
+        public Enum.EventType EventType = Enum.EventType.Checkpoint;
 
         // 重置方块偏移
         public int TileOffset = 0;

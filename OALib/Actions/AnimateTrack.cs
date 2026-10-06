@@ -2,7 +2,7 @@
 
 namespace OALib.Actions
 {
-    using Lib;
+    using Enum;
 
     public class AnimateTrack : JObject
     {
@@ -10,7 +10,7 @@ namespace OALib.Actions
         public int Floor = 0;
 
         // 事件类型
-        public Lib.EventType EventType = Lib.EventType.AnimateTrack;
+        public Enum.EventType EventType = Enum.EventType.AnimateTrack;
     
         // 动画前节拍
         public int BeatsAhead = 3;
@@ -19,10 +19,10 @@ namespace OALib.Actions
         public int BeatsBehind = 4;
     
         // 轨道升起动画
-        public Lib.TrackAnimation? TrackAnimation = Lib.TrackAnimation.None;
+        public Enum.TrackAnimation? TrackAnimation = Enum.TrackAnimation.None;
     
         //轨道消失动画
-        public Lib.TrackDisappearAnimation? TrackDisappearAnimation = Lib.TrackDisappearAnimation.None;
+        public Enum.TrackDisappearAnimation? TrackDisappearAnimation = Enum.TrackDisappearAnimation.None;
         public JObject Create()
         {
             JObject jObject = new JObject()

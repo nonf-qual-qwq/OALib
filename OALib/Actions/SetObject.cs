@@ -2,7 +2,7 @@
 
 namespace OALib.Actions;
 
-using Lib;
+using Enum;
 
 public class SetObject : JObject
 {
@@ -10,7 +10,7 @@ public class SetObject : JObject
     public int Floor = 0;
     
     // 事件类型
-    public Lib.EventType EventType = Lib.EventType.SetObject;
+    public Enum.EventType EventType = Enum.EventType.SetObject;
     
     // 时长
     public float Duration = 1;
@@ -22,7 +22,7 @@ public class SetObject : JObject
     public float AngleOffset = 0;
     
     // 缓速
-    public Lib.Ease Ease = Lib.Ease.Linear;
+    public Enum.Ease Ease = Enum.Ease.Linear;
     
     // 事件标签
     public string EventTag = "";
@@ -37,7 +37,7 @@ public class SetObject : JObject
     public float? TrackAngle;
     
     // 轨道颜色类型
-    public Lib.TrackColorType? TrackColorType;
+    public Enum.TrackColorType? TrackColorType;
     
     // 轨道主色调
     public string? TrackColor;
@@ -52,10 +52,10 @@ public class SetObject : JObject
     public float? TrackOpacity;
     
     // 轨道风格
-    public Lib.TrackStyle? TrackStyle;
+    public Enum.TrackStyle? TrackStyle;
 
     // 轨道图标
-    public Lib.TrackIcon? TrackIcon;
+    public Enum.TrackIcon? TrackIcon;
 
     // 轨道图标角度
     public float? TrackIconAngle;
