@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using System;
+using Newtonsoft.Json.Linq;
 
 namespace OALib.Actions;
 
@@ -13,7 +14,7 @@ public class PlaySound : JObject
     public Enum.EventType EventType = Enum.EventType.PlaySound;
     
     // 打拍声
-    public Object Hitsound = Enum.Hitsound.Kick;
+    public Enum.Hitsound Hitsound = Enum.Hitsound.Kick;
     
     // 音乐偏移
     public int Offset = 0;

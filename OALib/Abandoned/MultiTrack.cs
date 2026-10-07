@@ -1,4 +1,5 @@
-﻿using OALib.Actions;
+﻿using System;
+using OALib.Actions;
 using OALib.AdofaiArc;
 using OALib.Decorations;
 
@@ -32,6 +33,9 @@ public class MultiTrack
     
     // 前奏时长
     public float StartTime = 4;
+    
+    // 中心
+    public float[] Center = [0, 0];
     
     // 火球颜色
     public string FireColor = "ffffff";
@@ -79,7 +83,6 @@ public class MultiTrack
     public string TrackGlowColor = "ffffff";
     
     
-    
     // 是否添加星球
     public bool HasPlanet = false;
     
@@ -88,6 +91,10 @@ public class MultiTrack
     
     // 是否有轨道变化
     public bool HasChange = false;
+    
+    // 是否有轨道旋转
+    public bool HasRotate = false;
+    
     
     // 变化
     // 变化时长
@@ -116,6 +123,18 @@ public class MultiTrack
     
     // 变化轨道发光颜色
     public string ChangeTrackGlowColor = "ffffff";
+    
+    
+    // 旋转
+    
+    // 时长
+    public float RotateDuration = 1;
+    
+    // 角度
+    public float RotateAngle = 0;
+    
+    // 逐帧
+    public int Fps = 15;
 
 
     private float[] TileData;
@@ -142,45 +161,62 @@ public class MultiTrack
         const float deg2Rad = MathF.PI / 180f;
 
         float angle = 0f;
-        float rotation = 0f;
         float posX = 0;
         float posY = 0;
         float outputFloorBpm = Calculate.CalculateBpmSimple(Output)[OutputFloor];
         float angleOffset = 0;
+        
+        float rotation = 0f;
+        float rotationSpeed = RotateAngle / RotateDuration;
+
+        float[] rotationPivot = [0, 0];
+        
         bool hasMidSpinObject = false;
         bool hasMinSpinPlanet = false;
         bool hasSwitch = true;
 
+        
+        
         if (HasPlanet)
         {
-            var addFirePlanet = new AddObject
+            var addPlanet = new AddObject
             {
                 Floor = OutputFloor,
                 Position =  { [0] = DefaultPosition[0] + MathF.Cos(angle * deg2Rad) * Scale[0] / 100, [1] = DefaultPosition[1] + MathF.Sin(angle * deg2Rad) * Scale[0] / 100 },
-                Tag         = $"{PlanetTag} {PlanetTag}_Fire",
                 ObjectType = Enum.Enum.ObjectType.Planet,
                 PlanetColorType = Enum.Enum.PlanetColorType.Custom,
-                PlanetColor = FireColor,
-                PlanetTailColor = FireColor,
                 Scale       = Size,
                 Parallax    = Parallax,
             };
-            Output.ActionAdd(addFirePlanet.Create());
+            if (HasRotate)
+            {
+                addPlanet.PivotOffset = [0, 0];
+                //addPlanet.PivotOffset[0] = (addPlanet.Position[0] - Center[0]) * MathF.Cos(addPlanet.Rotation * deg2Rad) + (addPlanet.Position[1] - Center[1]) * MathF.Sin(addPlanet.Rotation * deg2Rad);
+                //addPlanet.PivotOffset[1] = - (addPlanet.Position[0] - Center[0]) * MathF.Sin(addPlanet.Rotation * deg2Rad) + (addPlanet.Position[1] - Center[1])  * MathF.Cos(addPlanet.Rotation * deg2Rad) ;
+                addPlanet.Position[0] = Center[0];
+                addPlanet.Position[1] = Center[1];
+            }
+
+            addPlanet.PlanetColor = addPlanet.PlanetTailColor = FireColor;
+            addPlanet.Tag = $"{PlanetTag} {PlanetTag}_Fire";
+            Output.ActionAdd(addPlanet.Create());
             
-            var addIcePlanet = new AddObject
+            addPlanet.PlanetColor = addPlanet.PlanetTailColor = IceColor;
+            addPlanet.Tag = $"{PlanetTag} {PlanetTag}_Ice";
+            Output.ActionAdd(addPlanet.Create());
+        }
+
+        if (HasRotate && RotateDuration > 0 && RotateDuration > 0)
+        {
+            var moveDecorationsAngle = new MoveDecorations
             {
                 Floor = OutputFloor,
-                Position =  { [0] = DefaultPosition[0] + MathF.Cos(angle * deg2Rad) * Scale[0] / 100, [1] = DefaultPosition[1]  + MathF.Sin(angle * deg2Rad) * Scale[0] / 100 },
-                Tag         = $"{PlanetTag} {PlanetTag}_Ice",
-                ObjectType = Enum.Enum.ObjectType.Planet,
-                PlanetColorType = Enum.Enum.PlanetColorType.Custom,
-                PlanetColor = IceColor,
-                PlanetTailColor = IceColor,
-                Scale       = Size,
-                Depth       = Depth,
-                Parallax    = Parallax,
+                Tag = $"{TileTag}",
+                AngleOffset = 0,
+                RotationOffset = RotateAngle,
+                Duration =  RotateDuration,
             };
-            Output.ActionAdd(addIcePlanet.Create());
+            Output.ActionAdd(moveDecorationsAngle.Create());
         }
 
         for (int i = 0, floor = StartFloor; floor <= EndFloor; i++, floor++)
@@ -231,25 +267,37 @@ public class MultiTrack
             {
                 addObject.TrackAngle = tileAngle[floor];
             }
+
+            if (HasRotate)
+            {
+                addObject.PivotOffset[0] = ((addObject.Position[0] - Center[0]) * MathF.Cos(addObject.Rotation * deg2Rad) + (addObject.Position[1] - Center[1]) * MathF.Sin(addObject.Rotation * deg2Rad) ) / Size[0] * 100;
+                addObject.PivotOffset[1] = (- (addObject.Position[0] - Center[0]) * MathF.Sin(addObject.Rotation * deg2Rad) + (addObject.Position[1] - Center[1])  * MathF.Cos(addObject.Rotation * deg2Rad) ) / Size[1] * 100;
+                rotationPivot = [addObject.Position[0] , addObject.Position[1]];
+                addObject.Position[0] = Center[0];
+                addObject.Position[1] = Center[1];
+            }
+
             Output.ActionAdd(addObject.Create());
             
-            // 添加星球旋转
-            if (HasPlanet)
+            /*
+            if (HasPlanet && HasStart)
             {
-                if (HasStart)
+                var moveDecorationsStart = new MoveDecorations
                 {
-                    var moveDecorationsStart = new MoveDecorations
-                    {
-                        Floor = OutputFloor,
-                    
-                    };
-                }
+                    Floor = OutputFloor,
+                };
+            }
+            */
+            
+            // 添加星球旋转(无旋转)
+            if (HasPlanet && !HasRotate)
+            {
                 
                 var moveDecorations = new MoveDecorations
                 {
                     Duration = 0,
                     Floor = OutputFloor,
-                    PositionOffset = { [0] = posX - 1, [1] = posY},
+                    PositionOffset = { [0] = posX - Scale[0] / 100, [1] = posY},
                     PivotOffset = [0, 0],
                     AngleOffset = angleOffset,
                     Tag = $"{PlanetTag}",
@@ -261,7 +309,7 @@ public class MultiTrack
                     Duration = 0,
                     Floor = OutputFloor,
                     AngleOffset = angleOffset,
-                    PivotOffset = [-1, 0],
+                    PivotOffset = [ -Scale[0] / 100, 0],
                 };
 
                 // Rotation
@@ -285,7 +333,7 @@ public class MultiTrack
                     Floor = OutputFloor,
                     Duration = TimeData[floor] * outputFloorBpm / 60,
                     RotationOffset =  moveDecorations2.RotationOffset - TileData[floor],
-                    AngleOffset = angleOffset,
+                    AngleOffset = angleOffset ,
                 };
                 
                 if (hasSwitch)
@@ -301,17 +349,100 @@ public class MultiTrack
                 Output.ActionAdd(moveDecorations2.Create());
                 Output.ActionAdd(moveDecorations3.Create());
 
-                if (HasBeat)
+
+            }
+            // 添加星球旋转(有旋转)
+            else if (HasPlanet && HasRotate)
+            {
+                
+                var moveDecorations = new MoveDecorations
                 {
-                    var playSound = new PlaySound
-                    {
-                        Floor = OutputFloor,
-                        AngleOffset = angleOffset
-                    };
-                    Output.ActionAdd(playSound.Create());
+                    Duration = 0,
+                    Floor = OutputFloor,
+                    PositionOffset = [0,0],
+                    PivotOffset = [(rotationPivot[0] - Center[0]) / Size[0] * 100 , (rotationPivot[1] - Center[1]) / Size[0] * 100],
+                    RotationOffset = angleOffset / 180 * rotationSpeed,
+                    AngleOffset = angleOffset,
+                    Tag =  $"{PlanetTag}",
+                };
+                
+                var moveDecorations2 = new MoveDecorations
+                {
+                    Duration = TimeData[floor] * outputFloorBpm / 60,
+                    Floor = OutputFloor,
+                    RotationOffset = (TimeData[floor] * outputFloorBpm / 60 + angleOffset / 180) * rotationSpeed,
+                    AngleOffset = angleOffset,
+                    Tag = $"{PlanetTag}",
+                };
+                
+                var moveDecorations3 = new MoveDecorations
+                {
+                    Duration = 0,
+                    Floor = OutputFloor,
+                    PivotOffset = [-1, 0],
+                    PositionOffset = {
+                        [0] = ((rotationPivot[0] - Center[0]) * MathF.Cos( angleOffset / 180 * rotationSpeed * deg2Rad) - (rotationPivot[1] - Center[1]) * MathF.Sin( angleOffset / 180 * rotationSpeed * deg2Rad) ) / Size[0] * 100,
+                        [1] = ((rotationPivot[0] - Center[0]) * MathF.Sin( angleOffset / 180 * rotationSpeed * deg2Rad) + (rotationPivot[1] - Center[1]) * MathF.Cos( angleOffset / 180 * rotationSpeed * deg2Rad) ) / Size[0] * 100
+                    },
+                    AngleOffset = angleOffset,
+                };
+                                
+                // Rotation
+                if (floor == 0)
+                {
+                    moveDecorations3.RotationOffset = (angleOffset / 180) * rotationSpeed;
                 }
+                else if (hasMinSpinPlanet)
+                {
+                    moveDecorations3.RotationOffset = 180 + Input.AngleData[floor - 2].ToObject<float>() + (angleOffset / 180) * rotationSpeed;
+                    hasMinSpinPlanet = false;
+                }
+                else
+                {
+                    moveDecorations3.RotationOffset = Input.AngleData[floor - 1].ToObject<float>() + (angleOffset / 180) * rotationSpeed;
+                }
+                
+                var moveDecorations4 = new MoveDecorations
+                {
+                    Duration = TimeData[floor] * outputFloorBpm / 60,
+                    Floor = OutputFloor,
+                    PositionOffset = {
+                        [0] = ((rotationPivot[0] - Center[0]) * MathF.Cos( (TimeData[floor] * outputFloorBpm / 60 + angleOffset / 180) * rotationSpeed * deg2Rad) - (rotationPivot[1] - Center[1]) * MathF.Sin( (TimeData[floor] * outputFloorBpm / 60 + angleOffset / 180) * rotationSpeed * deg2Rad)) / Size[0] * 100,
+                        [1] = ((rotationPivot[0] - Center[0]) * MathF.Sin( (TimeData[floor] * outputFloorBpm / 60 + angleOffset / 180) * rotationSpeed * deg2Rad) + (rotationPivot[1] - Center[1]) * MathF.Cos( (TimeData[floor] * outputFloorBpm / 60 + angleOffset / 180) * rotationSpeed * deg2Rad)) / Size[0] * 100
+                    },
+                    RotationOffset = moveDecorations3.RotationOffset - TileData[floor],
+                    AngleOffset = angleOffset,
+                };
+
+                
+                // Switch
+                if (hasSwitch)
+                {
+                    moveDecorations2.Tag = $"{PlanetTag}_Fire";
+                    moveDecorations3.Tag = moveDecorations4.Tag = $"{PlanetTag}_Ice";
+                }
+                else
+                {
+                    moveDecorations2.Tag = $"{PlanetTag}_Ice";
+                    moveDecorations3.Tag = moveDecorations4.Tag = $"{PlanetTag}_Fire";
+                }
+                hasSwitch = !hasSwitch;
+                
+                Output.ActionAdd(moveDecorations.Create());
+                Output.ActionAdd(moveDecorations2.Create()); 
+                Output.ActionAdd(moveDecorations3.Create());
+                Output.ActionAdd(moveDecorations4.Create());
             }
 
+            if (HasBeat)
+            {
+                var playSound = new PlaySound
+                {
+                    Floor = OutputFloor,
+                    AngleOffset = angleOffset
+                };
+                Output.ActionAdd(playSound.Create());
+            }
             angleOffset += 3 * TimeData[i + StartFloor] * outputFloorBpm;
             
             // 轨道变化

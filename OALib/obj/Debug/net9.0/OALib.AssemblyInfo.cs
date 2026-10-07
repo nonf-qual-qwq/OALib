@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OALib")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.2+9b9f317b395c93dca7a0ce16ed2f2b2bdc19a49c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.2+4eb76d8fe7a1f384bb9090577045128768e93574")]
 [assembly: System.Reflection.AssemblyProductAttribute("OALib")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OALib")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.1.2.0")]
